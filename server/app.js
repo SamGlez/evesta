@@ -7,6 +7,7 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session    = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const passport   = require('passport');
 const cors = require("cors");
 require('dotenv').config();
@@ -50,27 +51,31 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
-const index = require('./routes/index');
-app.use('/', index);
-
 app.use(session({
   secret: 'angular auth passport secret shh',
   resave: true,
   saveUninitialized: true,
+  store: new MongoStore({mongooseConnection: mongoose.connection}),
   cookie : { httpOnly: true, maxAge: 2419200000 }
 }));
-
 const passportLocalStrategy = require('./passport/local');
 passportLocalStrategy(passport);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
+const index = require('./routes/index');
+const centers = require('./routes/centers');
 const authRoutes = require('./routes/auth');
+
+app.use('/', index);
+app.use('/api/centers', centers);
 app.use('/api/auth', authRoutes);
 
+
+
 app.use((req, res, next) => {
-  res.sendfile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 

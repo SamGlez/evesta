@@ -1,0 +1,27 @@
+
+
+<h3> Center list </h3>
+<a [routerLink]="['add']"> Add new center </a>
+<div *ngFor="let center of centers" >
+
+          <div class="card">
+            <div class="card-image">
+
+              <img [src]='"http://localhost:3000/"+center.picture' />
+              <span class="card-title">  <h5> {{ center.name }} </h5></span>
+            </div>
+            <div class="card-content">
+              <p>{{center.services}}</p>
+              <br>
+              <a href="#">center details 2</a>
+              <span><strong>Center:</strong>{{ center.price }}</span>
+              <span> <strong>Telephone:</strong>{{ center.telephone }}/5</span>
+              <a  [routerLink]="[center._id]">Center Details</a>
+            </div>
+            <div class="card-action">
+
+
+            </div>
+          </div>
+
+</div>

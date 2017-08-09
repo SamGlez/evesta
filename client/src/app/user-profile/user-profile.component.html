@@ -1,0 +1,113 @@
+
+<div *ngIf="User" class="container ">
+
+  <div class="row ">
+    <div class="col s4 l3 profilepic ">
+
+
+          <div class="card">
+            <div class="card-image">
+              <img class="img-responsive" src="./assets/mayores.jpg">
+            </div>
+            <div class="card-content">
+              <h1>{{User.username}}</h1>
+                  <hr>
+                  <span><strong>Name:</strong></span><span >{{User.name }}</span>
+                  <p>
+                  <span ><strong>Last Name:</strong></span><span >{{User.lastname }}</span>
+                </p>
+                <span ><strong>E-mail:</strong></span><span ><a href="mailto:{{User.email}}">{{User.email }}</a></span>
+                <p>
+                <span ><strong>Company:</strong></span><span >{{User.company }}</span>
+              </p>
+              <p>
+                <span ><strong>Description:</strong></span><span>{{User.description }}</span>
+              </p>
+
+            </div>
+
+          </div>
+          <a class="btn btn-lg btn-primary btn-block">Edit</a>
+          <a class="btn btn-lg btn-primary btn-block">Delete</a>
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div  *ngIf="User" class="wrapper-profile pagination-centered">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12">
+        <div class="card hovercard "id="card-profile">
+          <div class="card-background">
+
+            <!-- http://lorempixel.com/850/280/people/9/ -->
+          </div>
+          <div class="useravatar">
+            <img alt="" src="{{User.picture }}">
+          </div>
+          <div class="card-info" id="card-info"> <span class="card-title">{{User.username}}</span>
+
+          </div>
+        </div>
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+
+
+        <div class="well">
+          <div class="tab-content">
+              <!-- <% if( session && session._id == user._id) { %>
+                <form class="" id="edituser" action="/user/<%=user._id%>/edit" method="post" enctype="multipart/form-data">
+                  <h4>Firstname: </h4><input type="text" name="name" value="<%= user.name %>">
+                  <h4>Lastname: </h4><input type="text" name="lastname" value="<%= user.lastname %>">
+                  <h4>Site: </h4><input type="text" name="personalWeb" value="<%= user.personalWeb %>">
+                  <h4>Photo: </h4><input class="photoInput" type="file" name="photo">
+                  <h4>Email: </h4><input type="email" name="email" value="<%= user.email %>">
+                  <h4>Description: </h4> <textarea name="description" form="editform" value="<%= user.description %>"></textarea>
+                  <input type="submit" name="" value="Guardar Cambios">
+                </form>
+                <% }else{ %> -->
+                  <h4><strong>Name:</strong></h4><h4 >{{User.name }}</h4>
+                  <h4 ><strong>Last Name:</strong></h4><h4 >{{User.lastname }}</h4>
+                  <h4 ><strong>E-mail:</strong></h4><h4 ><a href="mailto:{{User.email}}">{{User.email }}</a></h4>
+                  <h4 ><strong>Company:</strong></h4><h4 >{{User.company }}</h4>
+                  <h4 ><strong>Description:</strong></h4><h4>{{User.description }}</h4>
+                  <!-- <% } %> -->
+
+
+          </div>
+        </div>
+
+        <div id="portfolio" class="container-fluid text-center bg-grey">
+          <div class="recipes-row row text-center slideanim">
+
+
+
+            <div *ngFor="let center of centers" class=" col-sm-4 card">
+              <div class="card-img-top">
+                <img class="img-fluid"src="{{center.picture}}" alt="">
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">{{center.name}}</h4>
+                <p class="card-text"><{{center.type}}></p>
+                <a [routerLink]="[center._id]" class=" btn btn-primary btn-diet">  </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>

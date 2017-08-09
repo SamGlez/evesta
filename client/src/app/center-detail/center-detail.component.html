@@ -1,0 +1,123 @@
+
+
+<div *ngIf="center">
+
+
+<div  class="jumbotron text-center" id="diet-jumbotron">
+  <div  class="jumbotron-filter text-center">
+  <h1 class= "title">{{ center.name }}</h1>
+  <p class = "subtitle">{{ center.type }}.</p>
+  <p class = "subtitle"><strong>{{ center.province }},España.</strong></p>
+</div>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>¿Qué servicios ofrece el centro?</h2><br>
+      <h4>{{ center.services }}.</h4><br>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-record logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-cutlery logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>¿Cuánto me costará?</h2><br>
+      <h4>PRECIO ORIENTATIVO(/MES): <strong> {{center.price}}</strong></h4><br>
+
+  </div>
+</div>
+</div>
+
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-cutlery logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Garantía de Calidad</h2><br>
+      <h4> RATIO(USUARIOS/EMPLEADOS)<strong>{{ center.ratio }}:</strong></h4><br>
+
+  </div>
+</div>
+</div>
+
+<div id="about" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Me gusta lo que leo, ¿Cómo me pongo en contacto con ellos?</h2><br>
+      <h4>TELÉFONO:<strong>{{ center.number }}.</strong></h4><br>
+      <h4>EMAIL:<strong>{{ center.email }}.</strong></h4><br>
+      <h4>WEB:<strong>{{ center.web }}.</strong></h4><br>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-record logo"></span>
+    </div>
+  </div>
+</div>
+
+
+  <h2 class="comment-title">¿Qué dicen de este centro?</h2><br>
+  <h4>Comentarios de usuarios</h4>
+        <div class="row">
+        <div class="col-sm-12">
+        </div><!-- /col-sm-12 -->
+        </div><!-- /row -->
+        <div class="row comments">
+        <div class="col-sm-1">
+        <div class="comment-image"></div>
+        </div><!-- /col-sm-1 -->
+
+        <div class="col-sm-5">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+        <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+        </div>
+        <div class="panel-body">
+        Panel content
+        </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+
+        <div class="col-sm-1">
+        <div class="comment-image"></div>
+        </div><!-- /col-sm-1 -->
+
+        <div class="col-sm-5">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+        <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+        </div>
+        <div class="panel-body">
+        Panel content
+        </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+        </div><!-- /row -->
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid ">
+  <h2 class="text-center">¿La has probado? Comparte tu opinión</h2>
+  <div class="row">
+
+    <div class="col-sm-12 slideanim">
+      <div class="row">
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

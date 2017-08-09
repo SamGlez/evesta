@@ -32,8 +32,9 @@ export class SessionService {
     return Observable.throw(e.json().message);
   }
 
-  signup(username:string, password:string):Observable<User> {
-    return this.http.post(`${this.BASE_URL}/signup`, {username,password}, this.options)
+  signup(user):Observable<User> {
+    console.log(user);
+    return this.http.post(`${this.BASE_URL}/signup`, user, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
@@ -50,8 +51,8 @@ export class SessionService {
   logout():Observable<object>{
     return this.http.get(`${this.BASE_URL}/logout`, this.options)
       .map(res => {
-        res.json();
         this.user = undefined;
+        return res.json();
       })
       .catch(this.handleError);
   }
@@ -65,10 +66,10 @@ export class SessionService {
       .catch(this.handleError);
   }
 
-  getPrivateData():Observable<object>{
-    return this.http.get(`${this.BASE_URL}/private`, this.options)
-      .map(res => res.json())
-      .catch(this.handleError);
-  }
+  // getPrivateData():Observable<object>{
+  //   return this.http.get(`${this.BASE_URL}/private`, this.options)
+  //     .map(res => res.json())
+  //     .catch(this.handleError);
+  // }
 
 }

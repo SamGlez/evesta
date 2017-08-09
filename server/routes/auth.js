@@ -14,7 +14,12 @@ authRoutes.get('/signup',returnMessage("This should be a POST"));
 authRoutes.post('/signup', (req, res, next) => {
   const {
     username,
-    password
+    password,
+    name,
+    lastname,
+    company,
+    email,
+    description
   } = req.body;
 
   if (!username || !password) {
@@ -39,21 +44,29 @@ authRoutes.post('/signup', (req, res, next) => {
 
     const theUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      name,
+      lastname,
+      company,
+      email,
+      description
+
     }).save().then(user => {
+
+
       req.login(user, (err) => {
         if (err) {
           res.status(500).json({
-            message: 'Something went wrong'
+            message: err.message || 'Something went wrong'
           });
           return;
         }
         res.status(200).json(req.user);
       });
-    }).catch(e => res.status(400).json({
-      message: 'Something went wrong'
+    })
+    .catch(err => res.status(400).json({
+      message: err.message || 'Something went wrong'
     }));
-
   });
 });
 
@@ -90,16 +103,18 @@ authRoutes.post('/login', (req, res, next) => {
 
 /* User authenticated Middleware: Returns JSON ERROR */
 function ensureLoginOrJsonError(error = "Unauthorized") {
-  return (req, res, next) => req.isAuthenticated() ? next() : res.status(403).json({
-    error: error
-  });
+  return (req, res, next) => {
+    req.isAuthenticated() ? next() : res.status(403).json({
+    error: error });
+};
 }
 
 /* Logout route: remember this is a GET! */
 authRoutes.get('/logout', ensureLoginOrJsonError("User is not logged in"), (req, res, next) => {
   req.logout();
+  console.log("loggin out");
   res.status(200).json({
-    message: 'Success'
+    message: 'logout done'
   });
 });
 

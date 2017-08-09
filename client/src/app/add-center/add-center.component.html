@@ -1,0 +1,118 @@
+<h1> Add a new Center </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+
+<div class="wrapper-login pagination-centered">
+  <div class="container" id="dietform">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12">
+        <form class="form-diet" id="newDiet" (ngSubmit)="createCenter(center)" #myForm="ngForm" novalidate>
+          <h2 class="form-signin-heading">Crea tu Centro</h2>
+
+          <label for="centerName"> Nombre del centro:</label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Mi nuevo centro" autofocus="" [(ngModel)]="newCenter.name" name="CenterName" #myCenterName="ngModel" class="validate" required>
+
+          <label for="centerCategory">Categorias:</label>
+          <select type="text" id="category" class="form-control validate" name="centerCategory" #myCenterCategory="ngModel" [(ngModel)]="newCenter.type" placeholder="tipo de centro" required="">
+                            <option value="" disabled selected>Elige el tipo de tu centro</option>
+                            <option value="centro de dia">centro de dia</option>
+                            <option value="residencia">residencia</option>
+                        </select>
+
+          <label for="centerCompany"> Empresa:</label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Empresa asociada al centro" autofocus="" [(ngModel)]="newCenter.company" name="CenterCompany" #myCenterCompany="ngModel" class="validate" required>
+
+          <label for="centerNif">NIF:</label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="NIF del centro" autofocus="" [(ngModel)]="newCenter.nif" name="CenterNif" #myCenterName="ngModel" class="validate" required>
+
+          <!-- <label for="centerImage"> Imagen: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Imagen del centro" autofocus="" [(ngModel)]="newCenter.image" name="CenterImage" #myCenterImage="ngModel" class="validate" required> -->
+
+          <label for="centerWeb"> Web: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Web del centro" autofocus="" [(ngModel)]="newCenter.web" name="CenterWeb" #myCenterName="ngModel" class="validate" required>
+
+          <label for="centerProvince"> Provincia: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Provincia" autofocus="" [(ngModel)]="newCenter.province" name="centerProvince" #myCenterProvince="ngModel" class="validate" required>
+
+          <label for="centerEmail"> Email: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Email" autofocus="" [(ngModel)]="newCenter.email" name="centerEmail" #myCenterEmail="ngModel" class="validate" required>
+
+          <label for="centerTelephone"> Teléfono: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Telefono" autofocus="" [(ngModel)]="newCenter.number" name="centerTelephone" #myCenterTelephone="ngModel" class="validate" required>
+
+          <label for="centerPrice"> Precio(mensual): </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Precio" autofocus="" [(ngModel)]="newCenter.price" name="centerPrice" #myCenterPrice="ngModel" class="validate" required>
+
+          <label for="centerServices"> Servicios ofrecidos: </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Servicios ofrecidos " autofocus="" [(ngModel)]="newCenter.services" name="centerServices" #myCenterServices="ngModel" class="validate" required>
+
+          <label for="centerRatio"> Ratio(usuarios/trabajadores): </label>
+          <input id="icon_prefix" class="form-control" type="text" placeholder="Ratio" autofocus="" [(ngModel)]="newCenter.ratio" name="centerRatio" #myCenterRatio="ngModel" class="validate" required>
+
+          <input  name="CenterPicture" type="file" name="picture" ng2FileSelect [uploader]="uploader" class="validate" required/>
+
+          <button id="icon_prefix" class="form-control" type="button" (click)="createCenter(center)" name='btn_submit' class="btn btn-lg btn-primary btn-block" id="btnlogin">Crear</button>
+
+        </form>
+
+        <p> {{ feedback }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+    <input type="text" [(ngModel)]="newCenter.name" name="name" required />
+
+    <label> Tipo* </label>
+    <input type="text" [(ngModel)]="newCenter.type" name="type" required />
+
+    <label> Empresa* </label>
+    <input type="text" [(ngModel)]="newCenter.company" name="company" required />
+
+    <label> NIF* </label>
+    <input type="text" [(ngModel)]="newCenter.nif" name="nif" required />
+
+    <label> Foto* </label>
+    <input type="text" [(ngModel)]="newCenter.picture" name="picture" required />
+
+    <label> Web* </label>
+    <input type="text" [(ngModel)]="newCenter.web" name="web" required />
+
+    <label> Provincia* </label>
+    <input type="text" [(ngModel)]="newCenter.province" name="province" required />
+
+    <label> Email* </label>
+    <input type="text" [(ngModel)]="newCenter.email" name="email" required />
+
+    <label> Telefono* </label>
+    <input type="text" [(ngModel)]="newCenter.number" name="number" required />
+
+    <label> Precio* </label>
+    <input type="text" [(ngModel)]="newCenter.price" name="price" required />
+
+    <label> Servicios* </label>
+    <input type="text" [(ngModel)]="newCenter.services" name="services" required />
+
+    <label> Ratio* </label>
+    <input type="text" [(ngModel)]="newCenter.ratio" name="ratio" required />
+
+    <!<input type="file" name="file" ng2FileSelect [uploader]="uploader" /> -->
+
+
+<!-- <button type="button"(click)="createCenter(center)" name='btn_submit' >Submit</button>
+   </fieldset>
+</form>
+
+<p> {{ feedback }} </p> -->
