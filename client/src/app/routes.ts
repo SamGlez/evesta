@@ -13,12 +13,16 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'signup',  component: SignupFormComponent },
   { path: 'login', component: LoginFormComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent ,
+    children: [
+      { path: '', component: CenterListComponent }
+    ]
+  },
   { path: 'profile', component: UserProfileComponent },
   { path: 'list/add', component: AddCenterComponent },
   { path: 'list', component: CenterListComponent },
   {
-    path: 'list/:id', component: CenterDetailComponent,
+    path: 'home/:id', component: CenterDetailComponent,
     canActivate: [CenterActivationService]
   },
   { path: '**', redirectTo: '' }

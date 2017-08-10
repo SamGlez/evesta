@@ -7,138 +7,39 @@
         data-period="150"
         data-rotate='[ "adelgazar.", "tonificar.", "cuidarte.", "tu bienestar."]'></span>
    </h1>
+
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-8 col-xs-offset-2">
+      <div class="input-group">
+       <div class="input-group-btn search-panel">
+        <button type="button" class="btn btnsSearch btn-default dropdown-toggle" data-toggle="dropdown">
+          <span id="search_concept">Todo</span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu scrollable-dropdown" role="menu">
+          <li><a href="#">Centros de dia</a></li>
+          <li><a href="#">Residencias</a></li>
+        </ul>
+       </div>
+       <input type="hidden" name="search_param" value="all" id="search_param">
+       <input type="text" class="form-control"  name="x" id="search" placeholder="Search">
+       <span class="input-group-btn">
+  	     <button class="btn btn-default btnsSearch" type="button">
+  	       <span class="glyphicon glyphicon-search"></span>
+  	     </button>
+  	 </span>
+      </div>
+     </div>
+    </div>
+  </div>
+
  </div>
 </div>
-
 
 <!-- CARDS -->
 <div id="portfolio" class="container-fluid text-center bg-grey">
  <div class="recipes-row row text-center slideanim">
+   <router-outlet> </router-outlet>
 
-
- <!-- <% diets.forEach((d) => { %>
-   <div class=" col-sm-4 card">
-     <div class="card-img-top">
-       <img class="img-fluid"src="/uploads/<%=d.picture%>" alt="">
-     </div>
-     <div class="card-block">
-       <h4 class="card-title"><%=d.name %></h4>
-       <p class="card-text"><%=d.categories %></p>
-       <a href="/user/<%=d._creator.id %>" class=" btn btn-primary btn-diet"> <img width="50" height="50" src="/uploads/<%=d._creator.picture%>" class="img-circle"alt=""> </a>
-     </div>
-   </div>
-   <%  }) %> -->
-
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet ">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet" >  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
-<div class=" col-sm-4 card">
- <div class="card-img-top">
-   <img class="img-fluid"src="../../assets/mayores.jpg" alt="">
- </div>
- <div class="card-block">
-   <h4 class="card-title">Center</h4>
-   <p class="card-text">Magni inventore repellat dignissimos eveniet dolore ex sit illo adipisci accusamus quos.</p>
-   <a href="#" class=" btn btn-primary btn-diet">  </a>
- </div>
-</div>
 </div>
 </div>
